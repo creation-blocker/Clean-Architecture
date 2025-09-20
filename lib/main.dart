@@ -1,5 +1,5 @@
-import 'package:chat_message/features/product/presentation/bloc/product_bloc.dart';
-import 'package:chat_message/features/product/presentation/pages/product_page.dart';
+import 'package:chat_message/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:chat_message/features/auth/presentation/pages/login_page.dart';
 import 'package:chat_message/features/product/product_injection.dart';
 import 'package:chat_message/injection_container.dart' as di;
 import 'package:flutter/material.dart';
@@ -24,8 +24,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: BlocProvider(
-        create: (_) => sl<ProductBloc>()..add(LoadProductsEvent()),
-        child: ProductPage(),
+        create: (_) => sl<AuthBloc>(),
+        child: const LoginPage(),
       ),
     );
   }
